@@ -70,7 +70,7 @@
 'use client';
 import { useState, FormEvent } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { auth } from '../firebase/config';
+import { auth } from '../../app/firebase/config';
 
 const SignUp: React.FC = () => {
   const [email, setEmail] = useState<string>('');
