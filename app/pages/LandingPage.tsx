@@ -211,13 +211,14 @@ import {
 import { useNavigate } from 'react-router-dom';
 import Image from 'next/image';
 import background from '../../public/background.png';
+// import news from '../../public/news'
 // import { Router } from 'react-router-dom';
 
 const LandingPage = () => {
     const [longUrl, setLongUrl] = useState('');
     const navigate = useNavigate();
 
-    const handleShorten = (e:any) => {
+    const handleShorten = (e:any    ) => {
         e.preventDefault();
         if (longUrl) navigate(`/auth?createNew=${longUrl}`);
     };
@@ -260,7 +261,9 @@ const LandingPage = () => {
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
+          
         </div>
+        
     );
 }
 

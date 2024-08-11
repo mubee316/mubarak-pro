@@ -173,10 +173,16 @@ const SignIn: React.FC = () => {
       setEmail('');
       setPassword('');
 
-      if (longLink) {
-        navigate(`/dashboard?createNew=${longLink}`);
-      } else {
-        navigate('/');
+      if(res){
+        localStorage.setItem("userObj",JSON.stringify(res.user))
+        if (longLink) {
+          navigate(`/dashboard?createNew=${longLink}`);
+        } else {
+          navigate('/dashboard');
+        }
+      }
+      else{
+        window.alert("invalid credentials")
       }
     } catch (e) {
       console.error(e);

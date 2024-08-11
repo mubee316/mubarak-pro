@@ -85,6 +85,10 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Loader } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import background from '../../public/background.png';
+import { Input } from '@/components/ui/input';
+import Header from '@/components/Header';
+
 
 const Dashboard = () => {
   const [longUrl, setLongUrl] = useState('');
@@ -113,17 +117,24 @@ const Dashboard = () => {
   };
 
   return (
-    <div className='flex justify-center items-center text-center flex-col gap-4'>
+    
+   
+
+    <section>
+      {/* <Header/> */}
+      <div className='flex justify-center items-center text-center flex-col gap-4'   style={{ backgroundImage: `url(${background.src})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '100vh' }}>
       <h1>URL Shortener</h1>
       <form onSubmit={handleSubmit} className='flex gap-4'>
-        <input
+        <Input
+        className='w-96 h-20 rounded-full'
           type="text"
           value={longUrl}
           onChange={(e) => setLongUrl(e.target.value)}
           placeholder="Enter your URL"
           required
         />
-        <Button disabled={isLoading} className={isLoading ? "bg-black" : ""} type="submit">
+        <div>
+        <Button disabled={isLoading}  className={` rounded-full ml-3 p-6 h-20 bg-blue-400 text-white absolute left-[24rem]  ${isLoading ? "bg-black" : ""}`} type="submit" >
           {isLoading ? (
             <svg className='!text-white' width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
               <g fill="none" fillRule="evenodd">
@@ -144,6 +155,7 @@ const Dashboard = () => {
             </svg>
           ) : "Get Url"}
         </Button>
+        </div>
       </form>
       {shortUrl && <p>Shortened URL: <a href={shortUrl}>{shortUrl}</a></p>}
       {error && <p>{error}</p>}
@@ -152,7 +164,10 @@ const Dashboard = () => {
         <img src={qrCodeUrl} alt="QR Code" />
       </div>}
     </div>
-  );
+    
+
+    </section>  );
+  
 };
 
 export default Dashboard;
