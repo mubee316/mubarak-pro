@@ -92,6 +92,11 @@ const Header = () => {
     };
     fetchUserInBrowser();
   }, []);
+  const handleLogout = () => {
+    localStorage.removeItem('userObj')
+    router.push('/');
+
+  };
 
   return (
     <nav className="py-4 flex justify-between items-center">
@@ -100,8 +105,8 @@ const Header = () => {
       </Link>
 
       <div>
-        {!user ? (
-          <Button className="mt-8" onClick={() => router.push('/auth')}>
+        {user ? (
+          <Button className="mt-8" onClick={() => router.push('/Auth')}>
             Login
           </Button>
         ) : (
@@ -134,7 +139,9 @@ const Header = () => {
               }}>
             
                 <LogOut className="h-4" />
+                <span onClick={handleLogout}>
                 Log Out
+                </span>
              
               </DropdownMenuItem>
             </DropdownMenuContent>

@@ -199,15 +199,15 @@
 
 
 'use client';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Button } from '@/app/components/ui/button';
+import { Input } from '@/app/components/ui/input';
 import React, { useState } from 'react';
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/app/components/ui/accordion";
 import { useNavigate } from 'react-router-dom';
 import Image from 'next/image';
 import background from '../../public/background.png';
@@ -257,7 +257,7 @@ const LandingPage = () => {
                 <AccordionItem value="item-3">
                     <AccordionTrigger>How do I create a shortened URL?</AccordionTrigger>
                     <AccordionContent>
-                        To create a shortened URL, enter your long URL into the input field on the LinkBite homepage and click the "Shorten" button. A new, shorter link will be generated for you to use.
+                        To create a shortened URL, enter your long URL into the input field on the LinkBite homepage and click the &quot; Shorten &quot; button. A new, shorter link will be generated for you to use.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
