@@ -40,7 +40,7 @@ const AuthContent = () => {
 
 export default function Auth() {
   return (
-    <Suspense fallback={<div>Loading Auth...</div>}>
+    <Suspense fallback={<div className='flex justify-center items-center min-h-screen'>Loading Auth...</div>}>
       <AuthContent />
     </Suspense>
   );
