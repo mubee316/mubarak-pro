@@ -222,7 +222,7 @@ const LandingPage = () => {
 
     const handleShorten = (e:any    ) => {
         e.preventDefault();
-        if (longUrl) router.push(`/auth?createNew=${longUrl}`);
+        if (longUrl) router.push(`/auth-page?createNew=${longUrl}`);
     };
 
     return (

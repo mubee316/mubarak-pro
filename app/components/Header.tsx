@@ -107,7 +107,7 @@ const Header = () => {
 
       <div>
         {user ? (
-          <Button className="mt-8" onClick={() => router.push('/Auth')}>
+          <Button className="mt-8" onClick={() => router.push('/auth-page')}>
             Login
           </Button>
         ) : (
