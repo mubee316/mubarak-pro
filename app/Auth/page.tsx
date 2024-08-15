@@ -1,12 +1,12 @@
 'use client';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/components/ui/tabs";
 import Login from '@/app/components/sign-in/page';
 import Signup from '@/app/components/sign-up/page';
 import { auth } from '../firebase/config';
 
-const Auth = () => {
+const AuthContent = () => {
   const searchParams = useSearchParams();
   const createNew = searchParams.get("createNew");
 
@@ -28,6 +28,14 @@ const Auth = () => {
         </TabsContent>
       </Tabs>
     </div>
+  );
+};
+
+const Auth = () => {
+  return (
+    <Suspense fallback={<div>Loading Auth...</div>}>
+      <AuthContent />
+    </Suspense>
   );
 };
 

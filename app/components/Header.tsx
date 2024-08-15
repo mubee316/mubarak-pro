@@ -78,6 +78,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Link2Icon, LinkIcon, LogOut } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const Header = () => {
   const [user, setUser] = useState(false);
@@ -101,7 +102,7 @@ const Header = () => {
   return (
     <nav className="py-4 flex justify-between items-center">
       <Link href="/">
-        <img src="/logo.png" className="h-36 w-40" alt="Logo" />
+        <Image src="/logo.png" className="h-36 w-40" alt="Logo" width={40} height={36}/>
       </Link>
 
       <div>

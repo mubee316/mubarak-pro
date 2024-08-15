@@ -211,16 +211,18 @@ import {
 import { useNavigate } from 'react-router-dom';
 import Image from 'next/image';
 import background from '../../public/background.png';
+import { useRouter } from 'next/navigation';
 // import news from '../../public/news'
 // import { Router } from 'react-router-dom';
 
 const LandingPage = () => {
     const [longUrl, setLongUrl] = useState('');
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
+    const router = useRouter()
 
     const handleShorten = (e:any    ) => {
         e.preventDefault();
-        if (longUrl) navigate(`/auth?createNew=${longUrl}`);
+        if (longUrl) router.push(`/auth?createNew=${longUrl}`);
     };
 
     return (

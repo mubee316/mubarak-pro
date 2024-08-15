@@ -107,6 +107,7 @@ import { Button } from '@/app/components/ui/button';
 import background from '../../public/background.png';
 import { Input } from '@/app/components/ui/input';
 import Header from '@/app/components/Header';
+import Image from 'next/image';
 
 const Dashboard = () => {
   const [longUrl, setLongUrl] = useState('');
@@ -136,9 +137,9 @@ const Dashboard = () => {
   };
 
   return (
-    <section>
+    <>
       <Header/>
-      <div className='flex justify-center items-center text-center flex-col gap-4' style={{ backgroundImage: `url(${background.src})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '100vh' }}>
+      <div className="flex justify-center items-center text-center flex-col gap-4" style={{ backgroundImage: `url(${background.src})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '100vh' }}>
         <h1>URL Shortener</h1>
         <form onSubmit={handleSubmit} className='flex gap-4'>
           <Input
@@ -177,10 +178,10 @@ const Dashboard = () => {
         {error && <p>{error}</p>}
         {qrCodeUrl && <div>
           <p>QR Code:</p>
-          <img src={qrCodeUrl} alt="QR Code" />
+          <Image src={qrCodeUrl} width={350} height={350} alt="QR Code" />
         </div>}
       </div>
-    </section>
+      </>
   );
 };
 

@@ -1,7 +1,7 @@
 import {render , screen } from "@testing-library/react";
 import user from "@testing-library/user-event"
 import axios from "axios";
-import {handleSubmit} from '../app/dashboard/page'
+import {handleSubmit} from "../app/dashboard/page"
 import { describe } from "node:test";
 
 jest.mock('axios')

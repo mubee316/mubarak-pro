@@ -5,7 +5,7 @@ import { getLastParameter } from '@/lib/utils';
 const BITLY_API_URL = 'https://api-ssl.bitly.com/v4';
 
 export async function POST(request: Request): Promise<NextResponse> { 
-  const BITLY_ACCESS_TOKEN = "39a1e28eb7d8126143f21e1a29352b5f658b8a49";
+  const BITLY_ACCESS_TOKEN = "3a5f5e918b5cb972f8dea0b4eac66c9f3a917678";
   if (!BITLY_ACCESS_TOKEN) {
     console.error('Bitly access token not configured');
     return NextResponse.json({ error: 'Bitly access token not configured' }, { status: 500 });
